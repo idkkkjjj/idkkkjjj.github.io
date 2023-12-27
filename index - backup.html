@@ -13,23 +13,26 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #000000; /* Cor de fundo preta */
+            background: url('only.png') center top no-repeat; /* Substitua 'only.png' pelo caminho correto ou URL da sua imagem */
+            background-size: 30% auto; /* Alterado para 50% da largura e altura automática */
+            transition: background-color 0s ease, opacity 0s ease;
         }
 
         button {
-            background-color: #6a009a; /* Cor roxa */
+            background-color: #0face3;
             color: black;
             padding: 15px 30px;
             font-size: 20px;
-            font-weight: bold; /* Negrito */
-            border-radius: 10px; /* Borda arredondada */
+            font-weight: bold;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves de cor e transformação */
+            transition: background-color 0.4s ease, transform 0.4s  ease;
+            margin-top: 20px;
         }
 
         button:hover {
-            background-color: #800095; /* Cor roxa mais claro ao passar o mouse */
-            transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+            background-color: #0e8ecd;
+            transform: scale(1.1);
         }
 
         #media-container {
@@ -41,7 +44,7 @@
             background-color: black;
             z-index: 1;
             opacity: 0;
-            transition: opacity 1s ease; /* Transição suave de opacidade */
+            transition: opacity 1s ease;
         }
 
         #media-container.show {
@@ -54,12 +57,8 @@
             max-height: 100%;
             display: block;
             margin: auto;
-            opacity: 0; /* Começa com opacidade 0 */
-            transition: opacity 2s ease; /* Adicionando transição de opacidade */
-        }
-
-        #media-container.show img {
-            opacity: 1; /* Muda para opacidade 1 quando o contêiner é exibido */
+            opacity: 1;
+            transition: opacity 2s ease;
         }
     </style>
 </head>
@@ -76,16 +75,21 @@
 
     <script>
         function showMedia() {
+            const body = document.body;
+            body.style.backgroundColor = 'black';
+
             const mediaContainer = document.getElementById('media-container');
             mediaContainer.classList.add('show');
             playAudio();
-            
-            // Oculta o botão ao ser clicado
+
             const profileButton = document.getElementById('profileButton');
             profileButton.style.display = 'none';
         }
 
         function closeMedia() {
+            const body = document.body;
+            body.style.backgroundColor = '';
+
             const mediaContainer = document.getElementById('media-container');
             mediaContainer.classList.remove('show');
             pauseAudio();
@@ -99,7 +103,7 @@
         function pauseAudio() {
             const audio = document.getElementById('audio');
             audio.pause();
-            audio.currentTime = 0; // Reinicia o áudio para o início
+            audio.currentTime = 0;
         }
     </script>
 </body>
