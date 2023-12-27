@@ -14,7 +14,6 @@
             margin: 0;
             background-color: #000000; /* Cor de fundo preta */
         }
-
         button {
             background-color: #6a009a; /* Cor roxa */
             color: black;
@@ -25,12 +24,10 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves de cor e transformação */
         }
-
         button:hover {
             background-color: #800095; /* Cor roxa mais claro ao passar o mouse */
             transform: scale(1.1); /* Efeito de escala ao passar o mouse */
         }
-
         #media-container {
             display: none;
             position: fixed;
@@ -42,12 +39,10 @@
             opacity: 0;
             transition: opacity 1s ease; /* Transição suave de opacidade */
         }
-
         #media-container.show {
             display: flex;
             opacity: 1;
         }
-
         #media-container img {
             max-width: 100%;
             max-height: 100%;
@@ -56,7 +51,6 @@
             opacity: 0; /* Começa com opacidade 0 */
             transition: opacity 2s ease; /* Adicionando transição de opacidade */
         }
-
         #media-container.show img {
             opacity: 1; /* Muda para opacidade 1 quando o contêiner é exibido */
         }
@@ -64,34 +58,28 @@
 </head>
 <body>
     <button onclick="showMedia()">Acesse meu perfil!</button>
-
     <div id="media-container">
         <img src="https://media.tenor.com/y5KVwUHOv-0AAAAi/rei-rei-plush.gif" alt="GIF">
-        <audio>
-    <source src="gangnam.mp3" type="audio/mp3">
+        <audio autoplay loop>
+    <source src="https://github.com/idkkkjjj/idkkkjjj.github.io/blob/main/gangnam.mp3" type="audio/mp3">
     Seu navegador não suporta o elemento de áudio.
 </audio>
-
     </div>
-
     <script>
         function showMedia() {
             const mediaContainer = document.getElementById('media-container');
             mediaContainer.classList.add('show');
             playAudio();
         }
-
         function closeMedia() {
             const mediaContainer = document.getElementById('media-container');
             mediaContainer.classList.remove('show');
             pauseAudio();
         }
-
         function playAudio() {
             const audio = document.getElementById('audio');
             audio.play();
         }
-
     </script>
 </body>
 </html>
